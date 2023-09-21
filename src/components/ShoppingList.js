@@ -1,5 +1,7 @@
 import { plantList } from '../datas/plantList';
+import CareScale from './CareScale';
 import '../styles/ShoppingList.css';
+
 
 
 const ShoppingList = () => {
@@ -14,7 +16,9 @@ const ShoppingList = () => {
                 {
                     plantList.map((plant) => (
                     <li key={plant.id} className='lmj-plant-item'>{plant.name} 
-                    {plant.isBestSale && <span>🔥</span>}</li>
+                    <CareScale careType="light" scaleValue={plant.light} />
+                    <CareScale careType="water" scaleValue={plant.water} />
+                    {plant.isSpecialOffer && <div className='lmj-sales'>SOLDES</div>}</li>
                 ))
                 }
             </ul>
