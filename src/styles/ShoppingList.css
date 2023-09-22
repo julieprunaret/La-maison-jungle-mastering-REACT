@@ -7,10 +7,11 @@
 }
 
 .lmj-plant-item {
-	border: solid 2px black;
-	border-radius: 10px;
-	height: 150px;
-	width: 150px;
+	border: solid 1px rgb(146, 146, 146);
+	border-radius: 20px;
+	padding-bottom: 10px;
+	/* height: 150px;
+	width: 150px; */
 	margin: 10px;
 	display: flex;
 	align-items: center;
