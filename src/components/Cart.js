@@ -1,9 +1,8 @@
 import '../styles/Cart.css';
 import { useState } from 'react';
 
-function Cart() {
+function Cart({cart, setCart}) {
     const monsteraPrice = 8;
-    const [cart, setCart] = useState(0);
     const [open, setOpen] = useState(false);
 
     //my soluce
@@ -21,13 +20,8 @@ function Cart() {
 			</button>
 			<h2>Panier</h2>
 			<div>Monstera : {monsteraPrice}€</div>
-			<button onClick={() => setCart(cart + 1)}>Ajouter</button>
 			<h3>Total : {monsteraPrice * cart}€</h3>
-            <button
-				onClick={() => setCart(0)}
-			>
-				Vider le panier
-			</button>
+            <button onClick={() => setCart(0)}>Vider le panier</button>
 		</div>
     ) : (
 		<div className='lmj-cart-closed'>

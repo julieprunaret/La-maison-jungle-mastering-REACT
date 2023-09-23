@@ -4,7 +4,7 @@ import PlantItem from './PlantItem';
 
 
 
-const ShoppingList = () => {
+const ShoppingList = ({cart, setCart}) => {
     // we get the list of plants and push the values in a tab
     const categories = plantList.reduce((acc, plant) => 
     // if the category isn't already in the array, we push it inside
@@ -13,11 +13,13 @@ const ShoppingList = () => {
     return (
         <div>
             <ul className='lmj-plant-list'>
-                {
-                    plantList.map((plant) => (
-                    <PlantItem name={plant.name} cover={plant.cover} id={plant.id} light={plant.light} water={plant.water} isSpecialOffer={plant.isSpecialOffer}/>
-                ))
-                }
+                        {
+                            plantList.map(({ id, cover, name, water, light, isSpecialOffer }) => (
+                                <div key={id}>
+                                    <PlantItem name={name} cover={cover} light={light} water={water} isSpecialOffer={isSpecialOffer} />
+                                    <button onClick={() => setCart(cart + 1)}>Ajouter</button>
+                                </div>
+                        ))}
             </ul>
             <ul>
                 {
