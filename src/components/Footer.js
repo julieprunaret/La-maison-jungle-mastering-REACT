@@ -15,7 +15,7 @@ function Footer () {
     }
 
     return (
-        <footer>
+        <footer className='lmj-footer'>
             <div className='lmj-footer-elem'>
 				Pour les passionné·e·s de plantes 🌿🌱🌵
 			</div>
