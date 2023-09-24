@@ -15,7 +15,8 @@ export const plantList = [
 		id: '1ed',
 		water: 3,
 		light: 1,
-		cover: calathea
+		cover: calathea,
+		price: 13
 	},
 	{
 		name: 'Aloe Vera',
@@ -23,7 +24,8 @@ export const plantList = [
 		id: '2ab',
 		water: 3,
 		light: 1,
-		cover: aloe
+		cover: aloe,
+		price: 10
 	},
 	{
 		name: 'Bonsaï',
@@ -32,7 +34,8 @@ export const plantList = [
 		isSpecialOffer: true,
 		water: 2,
 		light: 2,
-		cover: bonsai
+		cover: bonsai,
+		price: 42
 	},
 	{
 		name: 'Dracaena',
@@ -40,7 +43,8 @@ export const plantList = [
 		id: '4kk',
 		water: 1,
 		light: 2,
-		cover: dracaena
+		cover: dracaena,
+		price: 19
 	},
 	{
 		name: 'olivier',
@@ -48,7 +52,8 @@ export const plantList = [
 		id: '5pl',
 		water: 1,
 		light: 3,
-		cover: olivier
+		cover: olivier,
+		price: 21
 	},
 	{
 		name: 'Pilea',
@@ -56,7 +61,8 @@ export const plantList = [
 		id: '6uo',
 		water: 3,
 		light: 2,
-		cover: pilea
+		cover: pilea,
+		price: 8
 	},
 	{
 		name: 'plante serpent',
@@ -65,7 +71,8 @@ export const plantList = [
 		isSpecialOffer: true,
 		water: 1,
 		light: 2,
-		cover: plante_serpent
+		cover: plante_serpent,
+		price: 15
 	},
 	{
 		name: 'Pothos',
@@ -74,7 +81,8 @@ export const plantList = [
 		isSpecialOffer: true,
 		water: 2,
 		light: 2,
-		cover: pothos
+		cover: pothos,
+		price: 10
 	},
 	{
 		name: 'Spathiphillum',
@@ -82,6 +90,7 @@ export const plantList = [
 		id: '9vn',
 		water: 3,
 		light: 1,
-		cover: spathi
+		cover: spathi,
+		price: 18
 	}
 ]
