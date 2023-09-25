@@ -34,6 +34,10 @@
 	color: black;
 }
 
+ul {
+	padding: 0;
+}
+
 /* .lmj-cart_open {
     display: block;
 } */

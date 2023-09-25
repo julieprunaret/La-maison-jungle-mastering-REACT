@@ -2,8 +2,7 @@ import '../styles/Cart.css';
 import { useState } from 'react';
 
 function Cart({cart, setCart}) {
-    const monsteraPrice = 8;
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
 	const total = cart.reduce((acc, plantType) => acc + plantType.amount * plantType.price, 0)
 
@@ -12,6 +11,11 @@ function Cart({cart, setCart}) {
     //     setOpen(current => !current)
     // }
 
+	function deleteItem(e, name) {
+		e.preventDefault();
+		setCart(cart.filter((plant) => plant.name !== name));
+	}
+	 
     return open ? (
 		<div className='lmj-cart'>
 			<button
@@ -20,16 +24,27 @@ function Cart({cart, setCart}) {
 			>
 				Fermer
 			</button>
-			<h2>Panier</h2>
-			{
-				cart.map({ name, price, amount }, index => {
-					<div key={`${index}-${name}`}>
-						{name} {price}€ x{amount}
-					</div>
-				})
-			}
-			<h3>Total : {total}€</h3>
-            <button onClick={() => setCart(0)}>Vider le panier</button>
+			{ cart.length > 0 ? (
+				<div>
+					<h2>Panier</h2>
+					<ul>
+						{
+							cart.map(({ name, price, amount }, index) => {
+								return (
+									<div key={`${index}-${name}`}>
+										{name} {price}€ x{amount}
+										<button onClick={(e) => deleteItem(e, name)}>supprimer la plante</button>
+									</div>
+								)
+							})
+						}
+					</ul>
+					<h3>Total : {total}€</h3>
+					<button onClick={() => {setCart([])}}>Vider le panier</button>
+				</div>
+			) : (
+				<div>Votre panier est vide</div>
+			) }
 		</div>
     ) : (
 		<div className='lmj-cart-closed'>
