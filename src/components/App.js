@@ -8,6 +8,8 @@ import logo from '../assets/logo.png';
 
 function App() {
   const [cart, setCart] = useState([])
+  const [isFooterShown, updateIsFooterShown] = useState(true)
+
 
     return (
       <React.Fragment>
@@ -19,7 +21,10 @@ function App() {
           <Cart cart={cart} setCart={setCart}/>
           <ShoppingList  cart={cart} setCart={setCart}/>
         </div>
-        <Footer />
+        <button onClick={() => updateIsFooterShown(!isFooterShown)}>
+          Cacher
+        </button>
+        {isFooterShown && <Footer cart={cart}/>}
       </React.Fragment>
     )
 }

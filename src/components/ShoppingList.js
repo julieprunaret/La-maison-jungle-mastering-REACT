@@ -2,14 +2,16 @@ import { plantList } from '../datas/plantList';
 import '../styles/ShoppingList.css';
 import Categories from './Categories';
 import PlantItem from './PlantItem';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ShoppingList = ({cart, setCart}) => {
+    const [activeCategory, setActiveCategory] = useState('')
+
     // const [newPlantList, setNewPlantList] = useState(plantList)
     // console.log("newPlantList :" ,newPlantList);
 
     // we create the state
-    const [activeCategory, setActiveCategory] = useState('')
+    // const [activeCategory, setActiveCategory] = useState('')
 	const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
