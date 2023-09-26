@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function QuestionForm() {
-    //cette const permet de déclarer l'état initiale de l'inputValue (le useState) qui est donc "posez votre question ici"
     const [inputValue, setInputValue] = useState("posez votre question ici");
     const isInputError = inputValue.includes('f');
     return (
@@ -24,7 +23,5 @@ function QuestionForm() {
         }
     }
 }
-
-
 
 export default QuestionForm

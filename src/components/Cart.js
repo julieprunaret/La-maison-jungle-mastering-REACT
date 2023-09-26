@@ -3,13 +3,10 @@ import { useEffect, useState } from 'react';
 
 function Cart({cart, setCart}) {
     const [open, setOpen] = useState(true);
-
-	const total = cart.reduce((acc, plantType) => acc + plantType.amount * plantType.price, 0)
-
-    //my soluce
-    // const isMenuOpen = () => {
-    //     setOpen(current => !current)
-    // }
+	const total = cart.reduce(
+		(acc, plantType) => acc + plantType.amount * plantType.price,
+		0
+	)
 
 	function deleteItem(e, name) {
 		e.preventDefault();
@@ -19,7 +16,7 @@ function Cart({cart, setCart}) {
 	useEffect (() => {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
-	 
+
     return open ? (
 		<div className='lmj-cart'>
 			<button

@@ -15,7 +15,6 @@ function CareScale({scaleValue, careType}) {
                 scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
                 /* we put a sun for each number inferior or equal to the variable scalevalue */
             )}
-            
         </div>
     )
 
